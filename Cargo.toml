@@ -1,0 +1,13 @@
+[package]
+name = "uuidgen"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "uuidgen"
+path = "src/main.rs"
+
+[dependencies]
+arboard = "3.4.1"
+clap = { version = "4.5.21", features = ["derive"] }
+uuid = { version = "1.11.0", features = ["v4"] }
