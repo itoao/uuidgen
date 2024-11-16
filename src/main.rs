@@ -19,9 +19,8 @@ fn main() {
     let uuids = generate_uuids(args.count);
     let result = join_uuids(&uuids);
 
-    print_uuids(&uuids);
-    copy_to_clipboard(&mut clipboard, &result);
-    print_success_message();
+    clipboard.set_text(&result).unwrap();
+    println!("\x1b[32mCopied to clipboard! 📋\x1b[0m");
 }
 
 fn generate_uuids(count: u32) -> Vec<String> {
@@ -30,18 +29,4 @@ fn generate_uuids(count: u32) -> Vec<String> {
 
 fn join_uuids(uuids: &[String]) -> String {
     uuids.join("\n")
-}
-
-fn print_uuids(uuids: &[String]) {
-    for uuid in uuids {
-        println!("{uuid}");
-    }
-}
-
-fn copy_to_clipboard(clipboard: &mut Clipboard, text: &str) {
-    clipboard.set_text(text).unwrap();
-}
-
-fn print_success_message() {
-    println!("\x1b[32mCopied to clipboard! 📋\x1b[0m");
 }
