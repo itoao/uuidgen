@@ -18,3 +18,13 @@ Generate a multiple UUIDs:
 ```
 uuidgen 10
 ```
+
+## Installation
+1. Setup Rust
+Follow the installation steps [here](https://www.rust-lang.org/tools/install).
+
+2. Install with cargo
+```shell
+# root
+cargo install --path .
+```
